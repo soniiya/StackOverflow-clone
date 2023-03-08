@@ -4,8 +4,8 @@
   margin: 0% auto;
   border-top: solid 3px #ef8236;
   box-shadow: 0px 1px 5px #00000033;
-  position: sticky;
-  z-index: 5;
+  position: fixed;
+  z-index: 15;
   top: 0%;
   left: 0%;
   background-color: #f8f9f9;
@@ -51,7 +51,7 @@
   margin: 0px 3px;
   font-size: small;
   font-weight: 500;
-  text-decoration: non;
+  text-decoration: none;
   color: rgb(69, 69, 69);
   transition: 0.2s;
 }
@@ -62,18 +62,19 @@
   padding: 10px 20px;
 }
 
-.nav-item:hover {
+.nav-item:hover,
+.slide-in-icon:hover {
   background-color: rgb(226, 226, 226);
 }
 
-.navbar form {
+.navbar .navbar-1 form {
   flex-grow: 1;
-  padding: 0px 12px;
+  padding: 0px 10px;
+  margin-right: 20px;
   position: relative;
-  left: 20px;
 }
 
-.navbar form input {
+.navbar .navbar-1 form input {
   min-width: 90%;
   margin: 0;
   padding: 8px 10px 8px 32px;
@@ -82,9 +83,9 @@
   border-radius: 3px;
 }
 
-.navbar form .search-icon {
+.navbar .navbar-1 form .search-icon {
   position: absolute;
-  left: 20px;
+  left: 25px;
   top: 8px;
 }
 
@@ -94,7 +95,6 @@
   border-radius: 3px;
   background-color: #e7f8fe;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .nav-links:hover {
