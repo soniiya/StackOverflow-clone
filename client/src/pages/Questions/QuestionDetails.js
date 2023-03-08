@@ -25,7 +25,7 @@ function QuestionDetails() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const location = useLocation(); 
-    const url='http://localhost:3000';
+    const url='https://stackoverflow-clone-project.onrender.com';
 
     const User= useSelector((state) => (state.currentUserReducer))
 

@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router} from 'react-router-dom';
 import Routess from './components/Routess';
 
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { fetchAllquestions } from './actions/question';
 import { fetchAllUsers } from './actions/users';
 import { useDispatch } from 'react-redux';
@@ -16,11 +16,25 @@ function App() {
     dispatch(fetchAllUsers());
   },[dispatch])
 
+  const [slideIn, setSlideIn] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth <= 760) {
+      setSlideIn(false);
+    }
+  }, []);
+
+  const handleSlideIn = () => {
+    if (window.innerWidth <= 760) {
+      setSlideIn((state) => !state);
+    }
+  };
+
   return (
     <div className="App">
      <Router>
-      <Navbar  />
-      <Routess />
+      <Navbar handleSlideIn={handleSlideIn} />
+      <Routess slideIn={slideIn} handleSlideIn={handleSlideIn} />
     </Router> 
     </div>
   );
